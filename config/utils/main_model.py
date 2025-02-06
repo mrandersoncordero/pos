@@ -15,7 +15,7 @@ class MainModel(BaseModel):
         BaseModel (_type_): _description_
     """
 
-    deleted = models.DateTimeField(verbose_name="deleted", default=None)
+    deleted = models.DateTimeField(verbose_name="deleted", default=None, null=True, blank=True)
 
     active = models.BooleanField(verbose_name="Activo", default=True, help_text="")
 
