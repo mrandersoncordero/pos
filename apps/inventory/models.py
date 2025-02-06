@@ -9,7 +9,7 @@ from config.utils import MainModel
 
 class Category(MainModel, models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name="Nombre")
-    description = models.TextField(verbose_name="Descripcion")
+    description = models.TextField(verbose_name="Descripcion", null=True, blank=True)
 
     class Meta:
         verbose_name = "Categoria"  # Nombre en singular en Django Admin
