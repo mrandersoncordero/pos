@@ -8,10 +8,8 @@ import uuid
 
 
 class BaseModel(models.Model):
-    """Base Model.
-
-    Args:
-        id (UUID): primary key.
+    """
+    Base Model.
     """
 
     id = models.UUIDField(
