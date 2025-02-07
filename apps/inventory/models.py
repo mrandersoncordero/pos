@@ -21,7 +21,8 @@ class Category(MainModel, models.Model):
 
 class Unit(MainModel, models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Nombre")
-    description = models.TextField(verbose_name="Descripcion")
+    description = models.TextField(verbose_name="Descripcion", null=True, blank=True)
+    quantity = models.PositiveBigIntegerField(default=1)
 
     class Meta:
         verbose_name = "Unidad"  # Nombre en singular en Django Admin
@@ -36,7 +37,7 @@ class Unit(MainModel, models.Model):
 
 class Store(MainModel, models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Nombre")
-    address = models.TextField(verbose_name="Direccion")
+    address = models.TextField(verbose_name="Direccion", null=True, blank=True)
 
     class Meta:
         verbose_name = "Almacen"  # Nombre en singular en Django Admin
@@ -47,7 +48,8 @@ class Store(MainModel, models.Model):
 
 
 class Product(MainModel, models.Model):
-    name = models.CharField(max_length=200, verbose_name="Nombre")
+    name = models.CharField(max_length=200, verbose_name="Nombre", unique=True)
+    description = models.TextField(verbose_name="Descripcion", null=True, blank=True)
     category = models.ForeignKey(
         Category,
         related_name="products",
