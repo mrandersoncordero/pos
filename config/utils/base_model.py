@@ -12,20 +12,20 @@ class BaseModel(models.Model):
     Base Model.
     """
 
-    id = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, editable=False, unique=True
-    )
+    # id = models.UUIDField(
+    #     primary_key=True, default=uuid.uuid4, editable=False, unique=True
+    # )
 
     created = models.DateTimeField(
-        verbose_name="created",
+        verbose_name="Creado",
         auto_now_add=True,
-        help_text="Date time on which the object was created",
+        help_text="Fecha y hora en que se creó el objeto",
     )
 
     modified = models.DateTimeField(
-        verbose_name="modified",
+        verbose_name="Modificado",
         auto_now=True,
-        help_text="Date time on which the object was last modified",
+        help_text="Fecha en la que se modificó el objeto",
     )
 
     class Meta:
