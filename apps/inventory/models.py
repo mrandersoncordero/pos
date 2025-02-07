@@ -26,6 +26,9 @@ class Unit(MainModel, models.Model):
     class Meta:
         verbose_name = "Unidad"  # Nombre en singular en Django Admin
         verbose_name_plural = "Unidades"  # Nombre en plural en Django Admin
+        indexes = [
+            models.Index(fields=["active"]),
+        ]
 
     def __str__(self):
         return self.name
